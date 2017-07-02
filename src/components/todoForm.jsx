@@ -6,6 +6,7 @@ class TodoForm extends Component {
     const txt = this.todoTitle.value;
     this.props.onNewTodo({
       title: txt,
+      done: false,
       createdAt: new Date()
     });
   }
