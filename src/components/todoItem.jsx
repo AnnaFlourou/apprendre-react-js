@@ -23,7 +23,7 @@ class TodoItem extends Component{
 
 TodoItem.propTypes = {
   item: React.PropTypes.object.isRequired,
-  idx:  React.PropTypes.number,
+  idx:  React.PropTypes.number.isRequired,
   addToList: React.PropTypes.func,
   toggleTodo: React.PropTypes.func,
 };
