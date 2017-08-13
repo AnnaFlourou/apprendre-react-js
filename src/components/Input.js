@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-class TodoForm extends Component {
+class Input extends Component {
   onClick(evt){
     evt.preventDefault();
     const txt = this.todoTitle.value;
     this.todoTitle.value = '';
 
-    this.props.onNewTodo({
+    this.props.onAction({
       title: txt,
       done: false,
       createdAt: new Date()
@@ -17,10 +17,10 @@ class TodoForm extends Component {
     return(
       <div className='form'>
         <input type='text' ref={(input) => this.todoTitle = input}/>
-        <button onClick={this.onClick.bind(this)}>Ajouter</button>
+        <button onClick={this.onClick.bind(this)}>{this.props.btnText}</button>
       </div>
     );
   }
 }
 
-export default TodoForm;
+export default Input ;

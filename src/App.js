@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import List from './components/list';
-import TodoForm from './components/todoForm';
+import Input from './components/Input';
 import './App.css';
 
 class App extends Component {
@@ -32,12 +32,29 @@ class App extends Component {
           <h2>TodoApp</h2>
         </div>
         <div className="App-intro">
-          <TodoForm onNewTodo={this.onNewTodo.bind(this)}/>
+          { this.renderInput() }
+          { this.renderSearchInput() }
           <List todos={this.state.todos}
                 onTodoToggle={this.toggleTodoState.bind(this)}/>
         </div>
       </div>
     );
+  }
+  renderInput(){
+    return(
+      <Input btnText={"créer le todo"}
+        onAction={this.onNewTodo.bind(this)}/>
+    );
+  }
+
+  renderSearchInput(){
+    return(
+      <Input btnText="chercher" onAction={this.onSearch.bind(this)} />
+    );
+  }
+
+  onSearch(){
+    console.log("searching...");
   }
 }
 
