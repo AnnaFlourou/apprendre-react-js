@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class TodoItem extends Component{
   render(){
@@ -22,10 +23,10 @@ class TodoItem extends Component{
 }
 
 TodoItem.propTypes = {
-  item: React.PropTypes.object.isRequired,
-  idx:  React.PropTypes.number.isRequired,
-  addToList: React.PropTypes.func,
-  toggleTodo: React.PropTypes.func,
+  item: PropTypes.object.isRequired,
+  idx:  PropTypes.number.isRequired,
+  addToList: PropTypes.func,
+  toggleTodo: PropTypes.func,
 };
 
 export default TodoItem;
